@@ -1,2 +1,2 @@
-web: gunicorn sandlotkeeper:wsgi
+web: gunicorn sandlotkeeper.wsgi
 
