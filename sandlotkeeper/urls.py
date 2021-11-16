@@ -18,12 +18,12 @@ from django.urls import path
 from django.conf.urls import include
 
 from stats import urls as stats_urls
-from django.contrib.auth import views as auth_views
+from django.contrib.auth import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('stats/', include(stats_urls)),
-    path('login/', auth_views.auth_login, name='login'),
-    path('logout/', auth_views.auth_logout, name='logout'),
+    path('login/', views.LoginView, name='login'),
+    path('logout/', views.LogoutView, name='logout'),
 ]
 
