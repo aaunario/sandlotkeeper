@@ -18,9 +18,12 @@ from django.urls import path
 from django.conf.urls import include
 
 from stats import urls as stats_urls
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('stats/', include(stats_urls))
+    path('stats/', include(stats_urls)),
+    path(r'^login/$', auth_views.auth_login, name='login'),
+    path(r'^logout/$', auth_views.auth_logout, name='logout'),
 ]
 
